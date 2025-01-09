@@ -31,4 +31,9 @@ de las primeras funciones CRUD para los usuarios:
     - Editar Usuario
     - Eliminar Usuario
     - Listar todos los usuarios
-      
+
+5. - Implementación de la lógica para gestión de cuentas bancarias creadas en función de un usuario en específico,
+se implementa patrón DTO para que la solicitud de creación de la cuenta bancaria sea mucho más escalable y segura.
+   - Se agrega la anotación @JsonIgnore en la entidad Account para que no se genere un loop a la hora de listar los usuarios y las cuentas.
+   - Se agrega el enum TransactionType para delimitar los dos tipos de transacciones que tendremos
+   - Se le da un mejor orden a las entidades ya creadas, se les agrega propiedades a ciertos campos para no aceptar nulos y que sean campos únicos.
