@@ -17,4 +17,18 @@ Este repositorio consiste inicialmente en guardar los distintos cambios a lo lar
 
 ### Diagrama UML:
 
-![image](https://github.com/Jhonatanls/Proyecto-BankSystem/blob/develop/src/main/resources/static/UML-BankSystem.png)
+![image](src/main/resources/static/UML-BankSystem.png)
+
+3. Creación de modelos para las entidades de User, Account y Transaction con sus distintas relaciones
+    - **Relaciones:** 
+      - **OneToMany:** User -> Account
+      - **ManyToOne:** Account -> User
+
+4. Implementación inicial de la arquitectura MVC con las 3 capas de repository, service y controller, además de la generación 
+de las primeras funciones CRUD para los usuarios:
+    - Crear Usuario
+    - Obtener Usuario
+    - Editar Usuario
+    - Eliminar Usuario
+    - Listar todos los usuarios
+      
