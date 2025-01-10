@@ -44,6 +44,9 @@ Se le hacen pruebas a los servicios de User, Account y Transaction ya que son lo
 Se hacen pruebas de integración a las funcionalidades de los servicios anteriormente mencionados y su interacción
 con distintos componentes como el repositorio y la base de datos.
 
+### API Test
+Colección de Postman em formato JSON con las diferentes pruebas hechas a la API
+
 ## Organización por commits del proyecto
 
 Esta sección del repositorio consiste en documentar los distintos commits a lo largo del tiempo del sistema bancario que al final deberá contar con funcionalidades tales como:
@@ -84,8 +87,10 @@ de las primeras funciones CRUD para los usuarios:
      - Listar transacción por accountId
    - Se crea un Enum para manejar los estados de la transacción: EXITOSO o DECLINADO
    - Se actualizan los diagramas UML y ER para incluir los cambios realizados
-7. Creación de pruebas unitarias para la implementación de los servicios User, Account y Transaction usando el patron AAA.
+7. Creación de pruebas unitarias y de integración para la implementación de los servicios User, Account y Transaction usando el patron AAA y su interacción con las demás capas.
 8. - Se agrega Swagger y ula carpeta de config para la documentación interactiva de la Api y se agrega el siguiente endpoint para su consulta: http://localhost:8080/swagger-ui.html
    - Se hacen unos cambios pequeños en la organización del README.md
+9. Se agrega la colección de postman en formato JSON para el testeo de la API y los endponints de los distintos controllers.
+
 
 
