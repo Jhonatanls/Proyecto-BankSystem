@@ -91,6 +91,8 @@ de las primeras funciones CRUD para los usuarios:
 8. - Se agrega Swagger y ula carpeta de config para la documentación interactiva de la Api y se agrega el siguiente endpoint para su consulta: http://localhost:8080/swagger-ui.html
    - Se hacen unos cambios pequeños en la organización del README.md
 9. Se agrega la colección de postman en formato JSON para el testeo de la API y los endponints de los distintos controllers.
+10. - Se agrega la capa de seguridad con Spring security, para el register (creación), logueo y autenticación de usuarios para acceso a los distintos servicios que presta el sistema bancario.
+    - Test de AuthService con pruebas unitarias y de integración.
 
 
 
