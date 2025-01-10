@@ -52,3 +52,4 @@ de las primeras funciones CRUD para los usuarios:
      - Listar transacción por accountId
    - Se crea un Enum para manejar los estados de la transacción: EXITOSO o DECLINADO
    - Se actualizan los diagramas UML y ER para incluir los cambios realizados
+7. Creación de pruebas unitarias para la implementación de los servicios User, Account y Transaction usando el patron AAA.
