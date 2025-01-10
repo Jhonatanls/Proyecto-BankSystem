@@ -10,13 +10,13 @@
 			"name": "Users",
 			"item": [
 				{
-					"name": "createUser",
+					"name": "registerUser",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Jhonatan\",\r\n    \"username\":\"jhonatan25ls\",\r\n    \"password\":\"securePass\",\r\n    \"email\":\"jhonatan25@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Jhon\",\r\n    \"username\":\"jhonj\",\r\n    \"password\":\"securePassword\",\r\n    \"email\":\"jhon13@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,14 +24,47 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/users",
+							"raw": "http://localhost:8080/auth/register",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"users"
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"jhonj\",\r\n    \"password\": \"securePassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
 							]
 						}
 					},
@@ -40,10 +73,20 @@
 				{
 					"name": "getUser",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqaG9uaiIsImlhdCI6MTczNjU0Mjg5NCwiZXhwIjoxNzM2NTQ0MzM0fQ.nPCn3ZkTQ7FWfNNdT7xyfaLeOuF13CBs0ck4I5p1lko",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users/1",
+							"raw": "http://localhost:8080/users/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -51,7 +94,7 @@
 							"port": "8080",
 							"path": [
 								"users",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -60,6 +103,16 @@
 				{
 					"name": "getAllUser",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqaG9uYXRhbjI1bHMiLCJpYXQiOjE3MzY1NDE5NzIsImV4cCI6MTczNjU0MzQxMn0.h4v8PWufMrg9swvkIelGgly7YB8HrvCcWKmLLA1_uC4",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -143,11 +196,21 @@
 				{
 					"name": "createAccount",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqaG9uaiIsImlhdCI6MTczNjU0Mjg5NCwiZXhwIjoxNzM2NTQ0MzM0fQ.nPCn3ZkTQ7FWfNNdT7xyfaLeOuF13CBs0ck4I5p1lko",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\": 1\r\n}",
+							"raw": "{\r\n    \"userId\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -171,6 +234,16 @@
 				{
 					"name": "getAccounts",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqaG9uYXRhbjI1bHMiLCJpYXQiOjE3MzY1NDIyNzQsImV4cCI6MTczNjU0MzcxNH0.0Vx_lOmCMODngezT0xLQgX-0hfOkAaYV-zHVfg5wHzk",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -223,7 +296,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/accounts/2",
+							"raw": "http://localhost:8080/accounts/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -231,7 +304,7 @@
 							"port": "8080",
 							"path": [
 								"accounts",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -245,11 +318,21 @@
 				{
 					"name": "withdrawalTransaction",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqaG9uYXRhbjI1bHMiLCJpYXQiOjE3MzY1NDIyNzQsImV4cCI6MTczNjU0MzcxNH0.0Vx_lOmCMODngezT0xLQgX-0hfOkAaYV-zHVfg5wHzk",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"accountId\": 1,\r\n    \"transactionType\": \"RETIRO\",\r\n    \"amount\": 50000.0\r\n}\r\n",
+							"raw": "{\r\n    \"accountId\": 1,\r\n    \"transactionType\": \"RETIRO\",\r\n    \"amount\": 550.0\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -273,11 +356,21 @@
 				{
 					"name": "depositTransaction",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqaG9uYXRhbjI1bHMiLCJpYXQiOjE3MzY1NDIyNzQsImV4cCI6MTczNjU0MzcxNH0.0Vx_lOmCMODngezT0xLQgX-0hfOkAaYV-zHVfg5wHzk",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"accountId\": 1,\r\n    \"transactionType\": \"DEPOSITO\",\r\n    \"amount\": 250.0\r\n}\r\n",
+							"raw": "{\r\n    \"accountId\": 1,\r\n    \"transactionType\": \"DEPOSITO\",\r\n    \"amount\": 2500.0\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -321,6 +414,16 @@
 				{
 					"name": "getAllTransactions",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqaG9uYXRhbjI1bHMiLCJpYXQiOjE3MzY1NDIyNzQsImV4cCI6MTczNjU0MzcxNH0.0Vx_lOmCMODngezT0xLQgX-0hfOkAaYV-zHVfg5wHzk",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -341,6 +444,16 @@
 				{
 					"name": "getAllTransactionsByAccount",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqaG9uYXRhbjI1bHMiLCJpYXQiOjE3MzY1NDIyNzQsImV4cCI6MTczNjU0MzcxNH0.0Vx_lOmCMODngezT0xLQgX-0hfOkAaYV-zHVfg5wHzk",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {

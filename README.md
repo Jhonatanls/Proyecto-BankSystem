@@ -45,7 +45,7 @@ Se hacen pruebas de integración a las funcionalidades de los servicios anterior
 con distintos componentes como el repositorio y la base de datos.
 
 ### API Test
-Colección de Postman em formato JSON con las diferentes pruebas hechas a la API
+Colección de Postman em formato JSON con las diferentes pruebas hechas a la API: [Pruebas postman](src/main/resources/static/BankSystem.postman_collection.json)
 
 ## Organización por commits del proyecto
 
