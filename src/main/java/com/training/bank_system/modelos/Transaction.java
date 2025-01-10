@@ -34,5 +34,14 @@ public class Transaction {
     @JoinColumn(name = "account_id", nullable = false)
     private Account account;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private StatusTransaction statusTransaction;
+
+    @PrePersist
+    private void setTransactionDate() {
+        this.transactionDate = LocalDateTime.now();
+    }
+
 }
 

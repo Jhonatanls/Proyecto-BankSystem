@@ -10,8 +10,6 @@ import java.util.Optional;
 
 public interface AccountService {
 
-
-
     Account saveAccount(AccountRequestDTO accountDTO);
 
     Optional<Account> getAccount(Long accountId);
